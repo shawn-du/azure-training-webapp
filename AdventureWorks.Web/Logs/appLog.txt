@@ -1,14 +1,8 @@
-recoder time:2018-12-04 17:37:27,075 content:Created container helloworld2018-12-04-17-37-25
+recoder time:2018-12-05 14:29:38,844 content:Created container helloworld2018-12-05-14-29-37
 --------------------------------------------------
-recoder time:2018-12-04 17:37:27,677 content:Temp file =C:\Users\shawn_du\Documents\EPCNSZUW01032018-12-04-17-37-27.txt
+recoder time:2018-12-05 14:34:23,722 content:Created container helloworld2018-12-05-14-34-22
 --------------------------------------------------
-recoder time:2018-12-04 17:37:27,677 content:Uploading to Blob storage as blob EPCNSZUW01032018-12-04-17-37-27.txt
+recoder time:2018-12-05 14:36:24,917 content:Created container helloworld2018-12-05-14-36-23
 --------------------------------------------------
-recoder time:2018-12-04 17:37:28,270 content:Listing blobs in container.
---------------------------------------------------
-recoder time:2018-12-04 17:37:28,554 content:https://adventureworksstoragelog.blob.core.windows.net/helloworld2018-12-04-17-37-25/EPCNSZUW01032018-12-04-17-37-27.txt
---------------------------------------------------
-recoder time:2018-12-04 17:37:31,246 content:test1
---------------------------------------------------
-recoder time:2018-12-04 17:37:31,246 content:test1
+recoder time:2018-12-05 14:43:24,427 content:Created container helloworld2018-12-05-14-43-23
 --------------------------------------------------

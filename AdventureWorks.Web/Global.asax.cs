@@ -82,7 +82,7 @@ namespace AdventureWorks.Web
                     await cloudBlobContainer.SetPermissionsAsync(permissions);
 
                     // Create a file in your local MyDocuments folder to upload to a blob.
-                    string localPath = Environment.CurrentDirectory+"temp";
+                    string localPath = "D:\\home\\site\\wwwroot\\temp";
                     string localFileName = System.Net.Dns.GetHostName() + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
                     sourceFile = Path.Combine(localPath, localFileName);
                     // Write text to the file.
