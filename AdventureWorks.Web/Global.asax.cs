@@ -13,6 +13,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using System.Threading.Tasks;
 using log4net.Appender;
 using log4net.Core;
+
 namespace AdventureWorks.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -54,6 +55,7 @@ namespace AdventureWorks.Web
             CloudBlobContainer cloudBlobContainer = null;
             string sourceFile = null;
             string destinationFile = null;
+
 
             // Retrieve the connection string for use with the application. The storage connection string is stored
             // in an environment variable on the machine running the application called storageconnectionstring.

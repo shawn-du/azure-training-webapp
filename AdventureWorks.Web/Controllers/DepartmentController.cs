@@ -1,5 +1,8 @@
 ﻿using System.Web.Mvc;
 using AdventureWorks.Services.HumanResources;
+using Microsoft.ApplicationInsights;
+using TraceSeveretyLevel = Microsoft.ApplicationInsights.DataContracts.SeverityLevel;
+
 
 namespace AdventureWorks.Web.Controllers
 {
@@ -8,9 +11,12 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments
         public ActionResult Index()
         {
+            TelemetryClient client = new TelemetryClient();
+
             DepartmentService departmentService = new DepartmentService();
             var departmentGroups = departmentService.GetDepartments();
 
+            client.TrackTrace("+++++++++++++++++DepartmentsController");
             return View(departmentGroups);
         }
 
