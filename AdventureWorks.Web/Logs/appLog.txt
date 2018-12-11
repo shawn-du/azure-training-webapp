@@ -306,3 +306,59 @@ recoder time:2018-12-11 16:56:18,840 content:test1
 --------------------------------------------------
 recoder time:2018-12-11 16:56:18,840 content:test1
 --------------------------------------------------
+recoder time:2018-12-11 17:33:33,785 content:Created container helloworld2018-12-11-17-33-32
+--------------------------------------------------
+recoder time:2018-12-11 17:33:34,358 content:Temp file =D:\home\site\wwwroot\temp\EPCNSZUW01032018-12-11-17-33-34.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:33:34,358 content:Uploading to Blob storage as blob EPCNSZUW01032018-12-11-17-33-34.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:33:34,936 content:Listing blobs in container.
+--------------------------------------------------
+recoder time:2018-12-11 17:33:35,266 content:https://adventureworksstoragelog.blob.core.windows.net/helloworld2018-12-11-17-33-32/EPCNSZUW01032018-12-11-17-33-34.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:33:37,842 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 17:33:37,842 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 17:50:54,690 content:Created container helloworld2018-12-11-17-50-53
+--------------------------------------------------
+recoder time:2018-12-11 17:50:55,244 content:Temp file =D:\home\site\wwwroot\temp\EPCNSZUW01032018-12-11-17-50-55.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:50:55,244 content:Uploading to Blob storage as blob EPCNSZUW01032018-12-11-17-50-55.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:50:55,794 content:Listing blobs in container.
+--------------------------------------------------
+recoder time:2018-12-11 17:50:56,063 content:https://adventureworksstoragelog.blob.core.windows.net/helloworld2018-12-11-17-50-53/EPCNSZUW01032018-12-11-17-50-55.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:50:58,542 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 17:50:58,542 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 17:58:27,973 content:Created container helloworld2018-12-11-17-58-26
+--------------------------------------------------
+recoder time:2018-12-11 17:58:28,553 content:Temp file =D:\home\site\wwwroot\temp\EPCNSZUW01032018-12-11-17-58-28.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:58:28,553 content:Uploading to Blob storage as blob EPCNSZUW01032018-12-11-17-58-28.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:58:29,153 content:Listing blobs in container.
+--------------------------------------------------
+recoder time:2018-12-11 17:58:29,432 content:https://adventureworksstoragelog.blob.core.windows.net/helloworld2018-12-11-17-58-26/EPCNSZUW01032018-12-11-17-58-28.txt
+--------------------------------------------------
+recoder time:2018-12-11 17:58:31,892 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 17:58:31,892 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 18:01:09,367 content:Created container helloworld2018-12-11-18-01-08
+--------------------------------------------------
+recoder time:2018-12-11 18:01:09,944 content:Temp file =D:\home\site\wwwroot\temp\EPCNSZUW01032018-12-11-18-01-09.txt
+--------------------------------------------------
+recoder time:2018-12-11 18:01:09,944 content:Uploading to Blob storage as blob EPCNSZUW01032018-12-11-18-01-09.txt
+--------------------------------------------------
+recoder time:2018-12-11 18:01:10,529 content:Listing blobs in container.
+--------------------------------------------------
+recoder time:2018-12-11 18:01:10,833 content:https://adventureworksstoragelog.blob.core.windows.net/helloworld2018-12-11-18-01-08/EPCNSZUW01032018-12-11-18-01-09.txt
+--------------------------------------------------
+recoder time:2018-12-11 18:01:13,357 content:test1
+--------------------------------------------------
+recoder time:2018-12-11 18:01:13,357 content:test1
+--------------------------------------------------

@@ -3,6 +3,8 @@ using AdventureWorks.Services.HumanResources;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
 namespace AdventureWorks.Web.Controllers
 {
@@ -14,8 +16,9 @@ namespace AdventureWorks.Web.Controllers
             HttpContent httpContent = new StringContent("");
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var httpClient = new HttpClient();
-            var departments = httpClient.GetAsync("http://localhost:49886/api/DepartmentApi/").Result.Content.ReadAsStringAsync().Result;
-            var departmentGroups = JsonConvert.DeserializeObject(departments);
+            JavaScriptSerializer Serializer = new JavaScriptSerializer();
+            var departments = httpClient.GetAsync("http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/").Result.Content.ReadAsStringAsync().Result;
+            List<Department> departmentGroups = Serializer.Deserialize<List<Department>>(departments);
             
             return View(departmentGroups);
         }
@@ -23,9 +26,22 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments/Employees/{id}
         public ActionResult Employees(int id)
         {
-            DepartmentService departmentService = new DepartmentService();
-            var departmentEmployees = departmentService.GetDepartmentEmployees(id);
-            var departmentInfo = departmentService.GetDepartmentInfo(id);
+            string strUrl = "http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/" + id.ToString();
+
+            JavaScriptSerializer EmployeeSerializer = new JavaScriptSerializer();
+            var EmployeehttpClient = new HttpClient();
+            var employees = EmployeehttpClient.GetAsync(strUrl).Result.Content.ReadAsStringAsync().Result;
+            List<DepartmentEmployee> departmentEmployees = EmployeeSerializer.Deserialize<List<DepartmentEmployee>>(employees);
+
+            JavaScriptSerializer InfoSerializer = new JavaScriptSerializer();
+            HttpContent InfohttpContent = new StringContent("");
+            InfohttpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var httpClient = new HttpClient();
+            var Info = httpClient.PostAsync(strUrl, InfohttpContent).Result.Content.ReadAsStringAsync().Result;
+            //DepartmentInfo departmentInfo = JsonConvert.DeserializeObject(Info).;
+            DepartmentInfo departmentInfo = EmployeeSerializer.Deserialize<DepartmentInfo>(Info);
+
+
 
             ViewBag.Title = "Employees in " + departmentInfo.Name + " Department";
 
