@@ -32,33 +32,12 @@ namespace AdventureWorks.Web.Controllers
         }
 
         /// <summary>
-        /// Get department by id
-        /// </summary>
-        /// <remarks>
-        /// Get a department by id
-        /// </remarks>
-        /// <param name="id">Id of Department</param>
-        /// <returns></returns>
-        /// <response code="200">Department found</response>
-        /// <response code="404">Department not foundd</response>
-        [ResponseType(typeof(DepartmentInfo))]
-        public HttpResponseMessage GetDepartmentById(int id)
-        {
-            DepartmentService departmentService = new DepartmentService();
-            var departmentInfo = departmentService.GetDepartmentInfo(id);
-
-            return departmentInfo == null
-                ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Department not found")
-                : Request.CreateResponse(HttpStatusCode.OK, departmentInfo);
-        }
-
-        /// <summary>
         /// Get employees by id
         /// </summary>
         /// <remarks>
         /// Get list of employees by id
         /// </remarks>
-        /// <param name="id">Id of Department</param>
+        /// <param name="id">Id of the Department</param>
         /// <returns></returns>
         /// <response code="200">employees found</response>
         /// <response code="404">employees not found</response>
@@ -71,9 +50,9 @@ namespace AdventureWorks.Web.Controllers
 
 //            ViewBag.Title = "Employees in " + departmentInfo.Name + " Department";
 
-            return departmentInfo == null
+            return departmentEmployees == null
                 ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employees not found")
-                : Request.CreateResponse(HttpStatusCode.OK, departmentInfo);
+                : Request.CreateResponse(HttpStatusCode.OK, departmentEmployees);
         }
 
         // POST: api/DepartmentApi

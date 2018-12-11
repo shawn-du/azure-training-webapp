@@ -9,12 +9,8 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            TelemetryClient client = new TelemetryClient();
-
-            DepartmentService departmentService = new DepartmentService();
-            var departmentGroups = departmentService.GetDepartments();
-
-            client.TrackTrace("+++++++++++++++++DepartmentsController");
+            DepartmentApiController apiController = new DepartmentApiController();
+            var departmentGroups = apiController.Get();
             return View(departmentGroups);
         }
 
