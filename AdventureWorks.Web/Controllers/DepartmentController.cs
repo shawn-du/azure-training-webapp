@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using AdventureWorks.Services.HumanResources;
-using Microsoft.ApplicationInsights;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace AdventureWorks.Web.Controllers
 {
@@ -9,9 +11,12 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            DepartmentService departmentService = new DepartmentService();
-            var departmentGroups = departmentService.GetDepartments();
-
+            HttpContent httpContent = new StringContent("");
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var httpClient = new HttpClient();
+            var departments = httpClient.GetAsync("http://localhost:49886/api/DepartmentApi/").Result.Content.ReadAsStringAsync().Result;
+            var departmentGroups = JsonConvert.DeserializeObject(departments);
+            
             return View(departmentGroups);
         }
 

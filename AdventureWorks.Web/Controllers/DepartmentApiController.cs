@@ -55,9 +55,23 @@ namespace AdventureWorks.Web.Controllers
                 : Request.CreateResponse(HttpStatusCode.OK, departmentEmployees);
         }
 
-        // POST: api/DepartmentApi
-        public void Post([FromBody]string value)
+        /// <summary>
+        /// Get Department infomation
+        /// </summary>
+        /// <remarks>
+        /// Get Department infomation
+        /// </remarks>
+        /// <param name="id">department id</param>
+        /// <returns></returns>
+        /// <response code="201">department information found</response>
+        [ResponseType(typeof(DepartmentInfo))]
+        public HttpResponseMessage Post(int id)
         {
+            DepartmentService departmentService = new DepartmentService();
+            var departmentInfo = departmentService.GetDepartmentInfo(id);
+
+
+            return Request.CreateResponse(HttpStatusCode.Created, departmentInfo);
         }
 
         // PUT: api/DepartmentApi/5
