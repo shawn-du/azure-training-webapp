@@ -1,8 +1,6 @@
 ﻿using System.Web.Mvc;
 using AdventureWorks.Services.HumanResources;
 using Microsoft.ApplicationInsights;
-using TraceSeveretyLevel = Microsoft.ApplicationInsights.DataContracts.SeverityLevel;
-
 
 namespace AdventureWorks.Web.Controllers
 {
