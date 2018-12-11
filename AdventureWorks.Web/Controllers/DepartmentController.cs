@@ -9,8 +9,9 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            DepartmentApiController apiController = new DepartmentApiController();
-            var departmentGroups = apiController.Get();
+            DepartmentService departmentService = new DepartmentService();
+            var departmentGroups = departmentService.GetDepartments();
+
             return View(departmentGroups);
         }
 
