@@ -5,6 +5,8 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
+using System.Configuration;
+using StackExchange.Redis;
 
 namespace AdventureWorks.Web.Controllers
 {
