@@ -7,20 +7,36 @@ using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using System.Configuration;
 using StackExchange.Redis;
+using System.Reflection;
+using System.Linq;
 
 namespace AdventureWorks.Web.Controllers
 {
     public class DepartmentsController : Controller
     {
         // GET: Departments
+        private const string hashDepartmentsName = "hash_department_connection";
         public ActionResult Index()
         {
-            HttpContent httpContent = new StringContent("");
-            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var httpClient = new HttpClient();
-            JavaScriptSerializer Serializer = new JavaScriptSerializer();
-            var departments = httpClient.GetAsync("http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/").Result.Content.ReadAsStringAsync().Result;
-            List<Department> departmentGroups = Serializer.Deserialize<List<Department>>(departments);
+            List<Department> departmentGroups = null;
+            IDatabase cache = Redis.Connection.GetDatabase();
+            var length = cache.StringLength(hashDepartmentsName);
+            if(length > 0)
+            {
+                JavaScriptSerializer Serializer = new JavaScriptSerializer();
+                var departments = cache.StringGet(hashDepartmentsName).ToString();
+                departmentGroups = Serializer.Deserialize<List<Department>>(departments);
+            }
+            else
+            {
+                HttpContent httpContent = new StringContent("");
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var httpClient = new HttpClient();
+                JavaScriptSerializer Serializer = new JavaScriptSerializer();
+                var departments = httpClient.GetAsync("http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/").Result.Content.ReadAsStringAsync().Result;
+                departmentGroups = Serializer.Deserialize<List<Department>>(departments);
+                cache.StringSet(hashDepartmentsName, departments);
+            }
             
             return View(departmentGroups);
         }
@@ -49,5 +65,6 @@ namespace AdventureWorks.Web.Controllers
 
             return View(departmentEmployees);
         }
+
     }
 }
